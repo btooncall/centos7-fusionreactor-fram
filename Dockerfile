@@ -15,4 +15,4 @@ EXPOSE 8087
 ADD start.sh /opt/start.sh
 RUN chmod 755 /opt/start.sh
 
-ENTRYPOINT [ "./start.sh" ]
+# ENTRYPOINT [ "./start.sh" ]

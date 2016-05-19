@@ -12,8 +12,6 @@ RUN wget https://intergral-dl.s3.amazonaws.com/FR/FusionReactor-6.1.2/FusionReac
       
 EXPOSE 8087
 
-WORKDIR /opt/fusionreactor
-
 ADD start.sh /opt/start.sh
 RUN chmod 755 /opt/start.sh
 

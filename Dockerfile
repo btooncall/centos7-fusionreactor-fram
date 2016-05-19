@@ -9,10 +9,16 @@ RUN wget https://intergral-dl.s3.amazonaws.com/FR/FusionReactor-6.1.2/FusionReac
       && sh /opt/FusionReactor_linux-x64_6_1_2.sh -q -varfile /opt/response.varfile \
       && rm -f /opt/FusionReactor_linux-x64_6_1_2.sh \
       && rm -f /opt/response.varfile
-      
+
+VOLUME /opt/fusionreactor/instance/FRAM/conf
+
+# some basic variables than can be overwritten during execution
+ENV FRLICENSE ""
+
+
 EXPOSE 8087
 
 ADD start.sh /opt/start.sh
 RUN chmod 755 /opt/start.sh
 
-# ENTRYPOINT [ "./start.sh" ]
+ENTRYPOINT [ "/opt/start.sh" ]

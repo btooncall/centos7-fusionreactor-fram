@@ -14,4 +14,7 @@ EXPOSE 8087
 
 WORKDIR /opt/fusionreactor
 
-# ENTRYPOINT [ "./start.sh" ]
+ADD start.sh /opt/start.sh
+RUN chmod 755 /opt/start.sh
+
+ENTRYPOINT [ "./start.sh" ]
